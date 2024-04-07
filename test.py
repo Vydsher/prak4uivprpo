@@ -5,7 +5,7 @@ def test_clean_text():
     assert clean_text("John Doe") == "[censored]"
 
     # Тестирование замены номеров телефонов
-    assert clean_text("Его номер: +78881231213") == "Его номер: [censored]"
+    assert clean_text("Его номер: +788812312133") == "Его номер: [censored]"
 
     # Тестирование замены геолокации
     assert clean_text("IP Address: 192.168.1.1") == "IP Address: [censored]"
