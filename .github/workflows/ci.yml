@@ -15,7 +15,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.x'  # Выберите версию Python
+        python-version: '3.x'
 
     - name: Install dependencies
       run: |
@@ -24,4 +24,18 @@ jobs:
 
     - name: Run tests
       run: |
-        python test.py  # Ваш скрипт или команда для тестирования
+        python test.py  # Запуск тестов
+
+    - name: Send message to Discussions
+      if: success()
+      uses: actions/github-script@v4
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          github.graphql(mutation {
+            addDiscussionComment(input: { discussionId: "DISCUSSION_ID", body: "Новый комментарий после успешных тестов." }) {
+              comment {
+                id
+              }
+            }
+          })
