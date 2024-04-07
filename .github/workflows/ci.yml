@@ -32,10 +32,13 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
-          github.graphql(mutation {
-            addDiscussionComment(input: { discussionId: "DISCUSSION_ID", body: "Новый комментарий после успешных тестов." }) {
-              comment {
-                id
+          const query = 
+            mutation {
+              addDiscussionComment(input: { discussionId: "DISCUSSION_ID", body: "Новый комментарий после успешных тестов." }) {
+                comment {
+                  id
+                }
               }
             }
-          });
+          ;
+          github.graphql(query);
