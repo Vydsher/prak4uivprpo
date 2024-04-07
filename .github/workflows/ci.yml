@@ -32,5 +32,5 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
-          const query = "mutation { addDiscussionComment(input: { discussionId: \"DISCUSSION_ID\", body: \"Новый комментарий после успешных тестов.\" }) { comment { id } } }";
+          const query = "mutation { addDiscussionComment(input: { discussionId: https://github.com/Vydsher/prak4uivprpo/discussions/1, body: \"Новый комментарий после успешных тестов.\" }) { comment { id } } }";
           github.graphql(query);
