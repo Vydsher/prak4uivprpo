@@ -4,7 +4,7 @@ def clean_text(text):
     text = re.sub(r'\b[A-ZА-Я][a-zа-я]+\s[A-ZА-Я][a-zа-я]+\b', '[censored]', text)
 
     # Заменяем номера телефонов на '[censored]'
-    text = re.sub(r'\+\d{10}\b|\+\d{11}\b', '[censored]', text)
+    text = re.sub(r'\+\d{11}\b', '[censored]', text)
 
     # Заменяем данные геолокации на '[censored]'
     text = re.sub(r'\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b', '[censored]', text)
