@@ -1,5 +1,5 @@
 from main import clean_text
-
+import re
 def test_clean_text():
     # Тестирование замены имен и фамилий
     assert clean_text("John Doe") == "[censored]"
