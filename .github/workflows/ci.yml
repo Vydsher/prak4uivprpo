@@ -25,21 +25,3 @@ jobs:
     - name: Run tests
       run: |
         python test.py  # Запуск тестов
-
-    - name: Send message to Discussions
-      if: success()
-      uses: actions/github-script@v4
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        script: |
-          const discussionId = 'https://github.com/Vydsher/prak4uivprpo/discussions/1';
-          const query = 
-            mutation {
-              addDiscussionComment(input: { discussionId: "${discussionId}", body: "Новый комментарий после успешных тестов." }) {
-                comment {
-                  id
-                }
-              }
-            }
-          ;
-          github.graphql(query);
