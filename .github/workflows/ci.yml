@@ -25,12 +25,3 @@ jobs:
     - name: Run tests
       run: |
         python test.py  # Ваш скрипт или команда для тестирования
-
-    - name: Send message to GitHub Conservation
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        MESSAGE="Новый коммит! Тесты успешно пройдены."
-        curl -X POST -H "Authorization: token $GITHUB_TOKEN" \
-        -d "{ \"body\": \"$MESSAGE\" }" \
-        "https://api.github.com/repos/${GITHUB_REPOSITORY}/discussions/${{ github.event.repository.id }}/comments"
