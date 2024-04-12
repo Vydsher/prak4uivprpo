@@ -27,7 +27,7 @@ jobs:
         python test.py  # Запуск тестов
     - name: Run tests with coverage
       run: |
-        python -m pytest --cov=test.py
+        python -m pytest --cov= test.py
 
     - name: Upload coverage to Coveralls
       run: coveralls
