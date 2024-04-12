@@ -2,3 +2,4 @@ regex
 pytest
 pytest-cov
 coveralls
+pyyaml
