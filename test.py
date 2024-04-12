@@ -1,4 +1,3 @@
-import main
 from main import clean_text
 import re
 def test_clean_text():
