@@ -1,1 +1,1 @@
-# prak4uivprpo
+# prak4uivprpo Люблю делать лабы после работы
