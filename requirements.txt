@@ -1,3 +1,4 @@
 regex
 pytest
 pytest-cov
+coveralls
