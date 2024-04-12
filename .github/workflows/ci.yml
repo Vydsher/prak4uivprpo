@@ -25,3 +25,9 @@ jobs:
     - name: Run tests
       run: |
         python test.py  # Запуск тестов
+    - name: Run tests with coverage
+      run: |
+        python -m pytest --cov= main.py
+
+    - name: Upload coverage to Coveralls
+      run: coveralls
