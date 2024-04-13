@@ -24,7 +24,7 @@ jobs:
 
     - name: Run tests
       run: |
-        python test_utils.py  # Запуск тестов
+        python -m pytest = test_utils.py  # Запуск тестов
     - name: Run tests with coverage
       run: |
         python -m pytest --cov=.
